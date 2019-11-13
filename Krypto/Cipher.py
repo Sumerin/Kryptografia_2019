@@ -1,5 +1,6 @@
 import queue
 
+
 def railFence_encipher(message, h):
     layers = {}
     for i in range(h):
@@ -73,3 +74,26 @@ def railFence_decipher(message, h):
 
     decoded = "".join(result)
     return decoded
+
+
+def matrix_cipher(message, w):
+    matrix = ["" for w in range(w)]
+    position = 0
+    result = []
+    r = len(message) % (w * w)
+    if r != 0:
+        message += ''.join("=" for _ in range((w * w) - r))
+
+    while position < len(message):
+        for row in range(w):
+            start = position
+            end = position + w
+            matrix[row] = message[start:end]
+            position = end
+        for col in range(w):
+            for row in range(w):
+                result.append(matrix[row][col])
+
+    return "".join(result)
+
+

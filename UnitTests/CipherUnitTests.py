@@ -34,5 +34,20 @@ class CipherMethods(unittest.TestCase):
         result = Cipher.railFence_decipher(encrypted, h=4)
         self.assertEquals(expected, result)
 
+    def test_matrix_encipher_w3(self):
+        expected = "SFKZRWY ADTYRO AWNAWYZA YNJE KSTŻTAE CRMIZAEOW==Y==M=="
+
+        message = "SZYFR KWADRATOWY NAZYWANY JEST TAKŻE MACIERZOWYM"
+
+        result = Cipher.matrix_cipher(message, w=3)
+        self.assertEquals(expected, result)
+
+    def test_matrix_decipher_w3(self):
+        expected = "SZYFR KWADRATOWY NAZYWANY JEST TAKŻE MACIERZOWYM"
+        encrypted = "SFKZRWY ADTYRO AWNAWYZA YNJE KSTŻTAE CRMIZAEOWACYĄĆMBD"
+
+        result = Cipher.matrix_cipher(encrypted, w=3)
+        self.assertEquals(expected, result)
+
 if __name__ == '__main__':
     unittest.main()
