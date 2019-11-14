@@ -175,3 +175,83 @@ def column_decipher_pi_n(message, pi, n):
     return "".join(result)
 
 
+def cesar(message, k=2):
+    letters = ['A', 'Ą', 'B', 'C', 'Ć', 'D', 'E', 'Ę', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'Ł', 'M', 'N', 'Ń', 'O', 'Ó', 'P', 'Q', 'R', 'S', 'Ś', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'Ź', 'Ż']
+    letters_count = len(letters)
+
+    code_table = {}
+    for i in range(letters_count):
+        idx = (i + k) % letters_count
+        key = letters[i]
+        value = letters[idx]
+        code_table[key] = value
+
+    result = []
+    for char in message:
+        if char == " ":
+            value = " "
+        else:
+            value = code_table[char]
+        result.append(value)
+
+    return "".join(result)
+
+
+def vignere_encipher(message, key, m):
+        letters = ['A', 'Ą', 'B', 'C', 'Ć', 'D', 'E', 'Ę', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'Ł', 'M', 'N', 'Ń', 'O',
+                   'Ó', 'P', 'Q', 'R', 'S', 'Ś', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'Ź', 'Ż']
+        letters_count = len(letters)
+
+        code_tables = {}
+        for ki in range(m):
+            code_tables[ki] = {}
+            k = letters.index(key[ki])
+            for i in range(letters_count):
+                idx = (i + k) % letters_count
+                key_letter = letters[i]
+                value_letter = letters[idx]
+                code_tables[ki][key_letter] = value_letter
+
+        result = []
+        i = 0
+        for char in message:
+            if char == " ":
+                value = " "
+            else:
+                code_table_idx = i % m
+                value = code_tables[code_table_idx][char]
+                i += 1
+            result.append(value)
+
+        return "".join(result)
+
+
+def vignere_decipher(message, key, m):
+    letters = ['A', 'Ą', 'B', 'C', 'Ć', 'D', 'E', 'Ę', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'Ł', 'M', 'N', 'Ń', 'O',
+               'Ó', 'P', 'Q', 'R', 'S', 'Ś', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'Ź', 'Ż']
+    letters_count = len(letters)
+
+    code_tables = {}
+    for ki in range(m):
+        code_tables[ki] = {}
+        k = letters.index(key[ki])
+        for i in range(letters_count):
+            idx = (i + k) % letters_count
+            key_letter = letters[i]
+            value_letter = letters[idx]
+            code_tables[ki][value_letter] = key_letter
+
+    result = []
+    i = 0
+    for char in message:
+        if char == " ":
+            value = " "
+        else:
+            code_table_idx = i % m
+            value = code_tables[code_table_idx][char]
+            i += 1
+        result.append(value)
+
+    return "".join(result)
+
+

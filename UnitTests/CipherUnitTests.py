@@ -104,6 +104,40 @@ class CipherMethods(unittest.TestCase):
         result = Cipher.column_decipher(encrypted, key)
         self.assertEquals(expected, result)
 
+    def test_cesar_encipher(self):
+        expected = "TŻŹHŚ DFŻBŚB LFTV RŚŻŹŁNBĘFŃ TŻŹHŚW RŚŻFTWYBLCDFIP"
+        message = "SZYFR CEZARA JEST PRZYKŁADEM SZYFRU PRZESUWAJĄCEGO"
+        key = 2
+
+        result = Cipher.cesar(message, key)
+        self.assertEquals(expected, result)
+
+    def test_cesar_decipher(self):
+        expected = "SZYFR CEZARA JEST PRZYKŁADEM SZYFRU PRZESUWAJĄCEGO"
+        encrypted = "TŻŹHŚ DFŻBŚB LFTV RŚŻŹŁNBĘFŃ TŻŹHŚW RŚŻFTWYBLCDFIP"
+        key = 2
+
+        result = Cipher.cesar(encrypted, -key)
+        self.assertEquals(expected, result)
+
+    def test_vigenere_encipher(self):
+        expected = "TĘO SŹŹFS LEŚV PÓĘOCOY EP SŹŹFSW Z LPDĘŃ JĘĘNÓŚAŹPWZŃ"
+        message = "TEN SZYFR JEST PODOBNY DO SZYFRU Z KODEM JEDNORAZOWYM"
+        key = "AĄB"
+        m = len(key)
+
+        result = Cipher.vignere_encipher(message, key, m)
+        self.assertEquals(expected, result)
+
+    def test_vigenere_decipher(self):
+        expected = "TEN SZYFR JEST PODOBNY DO SZYFRU Z KODEM JEDNORAZOWYM"
+        encrypted = "TĘO SŹŹFS LEŚV PÓĘOCOY EP SŹŹFSW Z LPDĘŃ JĘĘNÓŚAŹPWZŃ"
+        key = "AĄB"
+        m = len(key)
+
+        result = Cipher.vignere_decipher(encrypted, key, m)
+        self.assertEquals(expected, result)
+
 
 if __name__ == '__main__':
     unittest.main()
