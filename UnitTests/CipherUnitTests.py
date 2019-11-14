@@ -126,7 +126,7 @@ class CipherMethods(unittest.TestCase):
         key = "AĄB"
         m = len(key)
 
-        result = Cipher.vignere_encipher(message, key, m)
+        result = Cipher.vigenere_encipher(message, key, m)
         self.assertEquals(expected, result)
 
     def test_vigenere_decipher(self):
@@ -135,7 +135,7 @@ class CipherMethods(unittest.TestCase):
         key = "AĄB"
         m = len(key)
 
-        result = Cipher.vignere_decipher(encrypted, key, m)
+        result = Cipher.vigenere_decipher(encrypted, key, m)
         self.assertEquals(expected, result)
 
 

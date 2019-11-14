@@ -197,7 +197,7 @@ def cesar(message, k=2):
     return "".join(result)
 
 
-def vignere_encipher(message, key, m):
+def vigenere_encipher(message, key, m):
         letters = ['A', 'Ą', 'B', 'C', 'Ć', 'D', 'E', 'Ę', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'Ł', 'M', 'N', 'Ń', 'O',
                    'Ó', 'P', 'Q', 'R', 'S', 'Ś', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'Ź', 'Ż']
         letters_count = len(letters)
@@ -226,7 +226,7 @@ def vignere_encipher(message, key, m):
         return "".join(result)
 
 
-def vignere_decipher(message, key, m):
+def vigenere_decipher(message, key, m):
     letters = ['A', 'Ą', 'B', 'C', 'Ć', 'D', 'E', 'Ę', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'Ł', 'M', 'N', 'Ń', 'O',
                'Ó', 'P', 'Q', 'R', 'S', 'Ś', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'Ź', 'Ż']
     letters_count = len(letters)
