@@ -55,13 +55,14 @@ class Modular_ArithmeticMethods(unittest.TestCase):
         self.assertTrue(Modular.is_prime(2))
         self.assertTrue(Modular.is_prime(3))
         self.assertTrue(Modular.is_prime(5))
-        self.assertTrue(Modular.is_prime(math.pow(2, 16) + 1))
+        self.assertTrue(Modular.is_prime(pow(2, 16) + 1))
 
     def test_is_prime_false(self):
         self.assertFalse(Modular.is_prime(4))
         self.assertFalse(Modular.is_prime(6))
         self.assertFalse(Modular.is_prime(8))
-        self.assertFalse(Modular.is_prime(math.pow(2, 16) - 1))
+        self.assertFalse(Modular.is_prime(pow(2, 16) - 1))
+        self.assertFalse(Modular.is_prime(pow(3, 16) - 1))
 
     def test_NWD1(self):
         expected = 1

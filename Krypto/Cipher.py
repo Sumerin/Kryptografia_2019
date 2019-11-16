@@ -1,5 +1,7 @@
 import queue, locale
 
+letters = ['A', 'Ą', 'B', 'C', 'Ć', 'D', 'E', 'Ę', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'Ł', 'M', 'N', 'Ń', 'O',
+           'Ó', 'P', 'Q', 'R', 'S', 'Ś', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'Ź', 'Ż']
 
 def railFence_encipher(message, h):
     layers = {}
@@ -177,6 +179,7 @@ def column_decipher_pi_n(message, pi, n):
 
 
 def cesar(message, k=2):
+    message = message.upper()
     letters = ['A', 'Ą', 'B', 'C', 'Ć', 'D', 'E', 'Ę', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'Ł', 'M', 'N', 'Ń', 'O', 'Ó', 'P', 'Q', 'R', 'S', 'Ś', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'Ź', 'Ż']
     letters_count = len(letters)
 
@@ -199,8 +202,8 @@ def cesar(message, k=2):
 
 
 def vigenere_encipher(message, key, m):
-        letters = ['A', 'Ą', 'B', 'C', 'Ć', 'D', 'E', 'Ę', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'Ł', 'M', 'N', 'Ń', 'O',
-                   'Ó', 'P', 'Q', 'R', 'S', 'Ś', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'Ź', 'Ż']
+        message = message.upper()
+
         letters_count = len(letters)
 
         code_tables = {}
@@ -228,8 +231,8 @@ def vigenere_encipher(message, key, m):
 
 
 def vigenere_decipher(message, key, m):
-    letters = ['A', 'Ą', 'B', 'C', 'Ć', 'D', 'E', 'Ę', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'Ł', 'M', 'N', 'Ń', 'O',
-               'Ó', 'P', 'Q', 'R', 'S', 'Ś', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'Ź', 'Ż']
+    message = message.upper()
+
     letters_count = len(letters)
 
     code_tables = {}
