@@ -138,6 +138,5 @@ class CipherMethods(unittest.TestCase):
         result = Cipher.vigenere_decipher(encrypted, key, m)
         self.assertEquals(expected, result)
 
-
 if __name__ == '__main__':
     unittest.main()
