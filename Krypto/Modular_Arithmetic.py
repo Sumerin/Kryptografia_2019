@@ -1,5 +1,6 @@
 import math
-
+from functools import reduce
+import numpy as np
 
 def mul_modulo(a,b, mod):
     return ((a % mod) * (b % mod)) % mod
@@ -34,4 +35,15 @@ def divisors_count(a):
         if a % b == 0:
             d += 2
     return d
+
+
+def nwd(list):
+    x = reduce(np.gcd, list)
+    return x
+
+
+def nww(list):
+    x = reduce(np.lcm, list)
+    return x
+
 

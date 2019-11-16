@@ -92,6 +92,42 @@ class ModularArithmeticMethods(unittest.TestCase):
         expected = 560
         self.assertEqual(expected, result)
 
+    def test_simple_nwd(self):
+        arg = [12, 3, 48]
+        result = MA.nwd(arg)
+        expected = 3
+        self.assertEqual(expected, result)
+
+    def test_simple_nwd_coprime(self):
+        arg = [48, 25]
+        result = MA.nwd(arg)
+        expected = 1
+        self.assertEqual(expected, result)
+
+    def test_simple_nwd_one_number(self):
+        arg = [48]
+        result = MA.nwd(arg)
+        expected = 48
+        self.assertEqual(expected, result)
+
+    def test_simple_nww(self):
+        arg = [12, 3, 48, 7]
+        result = MA.nww(arg)
+        expected = 336
+        self.assertEqual(expected, result)
+
+    def test_simple_nww_coprime(self):
+        arg = [48, 25]
+        result = MA.nww(arg)
+        expected = 1200
+        self.assertEqual(expected, result)
+
+    def test_simple_nww_one_number(self):
+        arg = [48]
+        result = MA.nww(arg)
+        expected = 48
+        self.assertEqual(expected, result)
+
 
 if __name__ == '__main__':
     unittest.main()
