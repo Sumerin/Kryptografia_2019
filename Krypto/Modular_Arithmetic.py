@@ -78,3 +78,35 @@ def phi(a):
         if np.gcd(i, a) == 1:
             count += 1
     return count
+
+
+def phi_by_kanon(a):
+    kanon_form = kanon(a)
+
+    euler = 1
+    for pk in kanon_form:
+        ak = kanon_form[pk]
+        tmp = pow(pk, ak) - pow(pk, ak - 1)
+        euler *= tmp
+    return euler
+
+
+def kanon(a):
+    kanon_form = {}
+    for i in range(2, math.floor(math.sqrt(a)) + 1):
+        if a == 1:
+            break
+        value = a / i
+        if math.floor(value) == value:
+            kanon_form[i] = 0
+            while math.floor(value) == value:
+                a = value
+                kanon_form[i] += 1
+                value = a / i
+    return kanon_form
+
+
+
+
+
+

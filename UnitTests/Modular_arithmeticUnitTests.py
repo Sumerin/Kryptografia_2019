@@ -301,3 +301,24 @@ class Modular_ArithmeticMethods(unittest.TestCase):
         expected = 560
         self.assertEqual(expected, result)
 
+    def test_kanon(self):
+        expected = {
+            2: 5,
+            3: 1
+        }
+        a = 96
+
+        result = Modular.kanon(a)
+        self.assertEqual(expected, result)
+
+    def test_kanon2(self):
+        expected = {
+            2: 4,
+            3: 1,
+            5: 2
+        }
+        a = 1200
+
+        result = Modular.kanon(a)
+        self.assertEqual(expected, result)
+

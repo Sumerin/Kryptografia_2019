@@ -80,9 +80,7 @@ def zad_2():
     # result6 = Modular.pi(a)
     # print(" pi(a)")
     # print(result6)
-
-
-    result7 = Modular.phi(a)
+    result7 = Modular.phi_by_kanon(a)
     print(" euler(a)")
     print(result7)
 
