@@ -322,3 +322,27 @@ class Modular_ArithmeticMethods(unittest.TestCase):
         result = Modular.kanon(a)
         self.assertEqual(expected, result)
 
+    def test_pi1(self):
+        expected = 0
+        a = 1
+        self.assertEquals(expected, Modular.pi(a))
+
+    def test_pi2(self):
+        expected = 1
+        a = 2
+        self.assertEquals(expected, Modular.pi(a))
+
+    def test_pi3(self):
+        expected = 2
+        a = 3
+        self.assertEquals(expected, Modular.pi(a))
+
+    def test_pi4(self):
+        expected = 7
+        a = 20
+        self.assertEquals(expected, Modular.pi(a))
+
+    def test_pi4(self):
+        expected = 7
+        a = 19
+        self.assertEquals(expected, Modular.pi(a))

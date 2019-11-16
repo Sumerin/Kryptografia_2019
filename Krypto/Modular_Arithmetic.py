@@ -105,8 +105,16 @@ def kanon(a):
                 value = a / i
     return kanon_form
 
-
-
+def pi(a):
+    count = 1
+    if a == 1:
+        return 0
+    if a == 2:
+        return 1
+    for i in range(3, a+1, 2):
+        if is_prime(i):
+            count += 1
+    return count
 
 
 
