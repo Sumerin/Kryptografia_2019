@@ -105,6 +105,7 @@ def kanon(a):
                 value = a / i
     return kanon_form
 
+
 def pi(a):
     count = 1
     if a == 1:
