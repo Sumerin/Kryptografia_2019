@@ -166,21 +166,25 @@ class Modular_ArithmeticMethods(unittest.TestCase):
         expected = 4
         a = 10
         self.assertEquals(expected, Modular.phi(a))
+        self.assertEquals(expected, Modular.phi_by_kanon(a))
 
     def test_euler2(self):
         expected = 6
         a = 9
         self.assertEquals(expected, Modular.phi(a))
+        self.assertEquals(expected, Modular.phi_by_kanon(a))
 
     def test_euler3(self):
         expected = math.pow(2, 16)
         a = int(math.pow(2, 16) + 1)
         self.assertEquals(expected, Modular.phi(a))
+        self.assertEquals(expected, Modular.phi_by_kanon(a))
 
     def test_euler4(self):
         expected = 1
         a = 1
         self.assertEquals(expected, Modular.phi(a))
+        self.assertEquals(expected, Modular.phi_by_kanon(a))
 
     def test_phi_prime(self):
         arg = 199
@@ -301,7 +305,7 @@ class Modular_ArithmeticMethods(unittest.TestCase):
         expected = 560
         self.assertEqual(expected, result)
 
-    def test_kanon(self):
+    def test_kanon1(self):
         expected = {
             2: 5,
             3: 1
@@ -318,6 +322,25 @@ class Modular_ArithmeticMethods(unittest.TestCase):
             5: 2
         }
         a = 1200
+
+        result = Modular.kanon(a)
+        self.assertEqual(expected, result)
+
+    def test_kanon3(self):
+        expected = {
+            2: 1,
+            5: 1
+        }
+        a = 10
+
+        result = Modular.kanon(a)
+        self.assertEqual(expected, result)
+
+    def test_kanon4(self):
+        expected = {
+            97: 1
+        }
+        a = 97
 
         result = Modular.kanon(a)
         self.assertEqual(expected, result)

@@ -93,7 +93,7 @@ def phi_by_kanon(a):
 
 def kanon(a):
     kanon_form = {}
-    for i in range(2, math.floor(math.sqrt(a)) + 1):
+    for i in range(2, a+1):
         if a == 1:
             break
         value = a / i

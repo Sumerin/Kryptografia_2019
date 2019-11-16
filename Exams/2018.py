@@ -77,9 +77,10 @@ def zad_2():
     print(" nww(a, 2^16 -1)")
     print(result5)
 
-    # result6 = Modular.pi(a)
-    # print(" pi(a)")
-    # print(result6)
+    result6 = Modular.pi(a)
+    print(" pi(a)")
+    print(result6)
+
     result7 = Modular.phi_by_kanon(a)
     print(" euler(a)")
     print(result7)
