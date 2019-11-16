@@ -369,3 +369,33 @@ class Modular_ArithmeticMethods(unittest.TestCase):
         expected = 7
         a = 19
         self.assertEquals(expected, Modular.pi(a))
+
+    def test_Fermat0(self):
+        expected = 3
+        a = 0
+        self.assertEquals(expected, Modular.fermat(a))
+
+    def test_Fermat5(self):
+        expected = 4294967297
+        a = 5
+        self.assertEquals(expected, Modular.fermat(a))
+
+    def test_Fermat7(self):
+        expected = 340282366920938463463374607431768211457
+        a = 7
+        self.assertEquals(expected, Modular.fermat(a))
+
+    def test_nFermat0(self):
+        expected = 0
+        a = 3
+        self.assertEquals(expected, Modular.nfermat(a))
+
+    def test_nFermat5(self):
+        expected = 5
+        a = 4294967297
+        self.assertEquals(expected, Modular.nfermat(a))
+
+    def test_nFermat_non(self):
+        expected = None
+        a = 4
+        self.assertEquals(expected, Modular.nfermat(a))

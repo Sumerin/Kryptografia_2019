@@ -118,4 +118,23 @@ def pi(a):
     return count
 
 
+def fermat(n):
+    power = pow(2, n)
+    return pow(2, power) + 1
+
+
+def nfermat(a):
+    n = 0
+    fermat_base = pow(2, pow(2, n))
+    fer = fermat_base + 1
+    while fer < a:
+        fermat_base *= fermat_base
+        fer = fermat_base + 1
+        n += 1
+    if a == fer:
+        return n
+    else:
+        return None
+
+
 
