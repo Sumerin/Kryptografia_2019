@@ -48,6 +48,7 @@ def zad_1():
     p2p1 = Pi.multiply(p2, p1)
     print(p2p1)
 
+
 def zad_2():
     base = 2018
     power = 2018
@@ -59,8 +60,13 @@ def zad_2():
     t1 = pow(2, 16) - 1
     result1 = a % t1
 
+    # result2 = Modular.tau(a)
+    result3 = Modular.jota(a)
+    result4 = Modular.nwd(a, t1)
+    result5 = Modular.nww(a, t1)
 
-zad_1()
+
+# zad_1()
 zad_2()
 
 # zad_6()
