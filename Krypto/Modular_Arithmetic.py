@@ -54,13 +54,7 @@ def nww(list):
 
 
 def tau(a):
-    result = 1
-    for b in range(1, a):
-        t1 = math.floor(a / b)
-        t2 = math.floor((a - 1) / b)
-        result += (t1 - t2)
-
-    return result
+    return divisors_count(a)
 
 
 def jota(a):
@@ -76,6 +70,8 @@ def phi(a):
     "i są z nią względnie pierwsze." \
     "φ nazywane jest funkcją Eulera. "
     "WIĘCEJ WŁAŚCIWOŚCI PATRZ SLAJDY 22, 26"
+    if a > 1 and is_prime(a):
+        return a - 1
     count = 0
     for i in range(1, a + 1):
         "range do not include end value, +1 is necessary"

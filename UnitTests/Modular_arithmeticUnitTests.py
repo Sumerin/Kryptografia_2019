@@ -194,6 +194,12 @@ class Modular_ArithmeticMethods(unittest.TestCase):
         expected = 8
         self.assertEqual(expected, result)
 
+    def test_phi_prime(self):
+        arg = 199
+        result = Modular.phi(arg)
+        expected = 198
+        self.assertEqual(expected, result)
+
     def test_is_prime_true(self):
         self.assertTrue(Modular.is_prime(1))
         self.assertTrue(Modular.is_prime(2))

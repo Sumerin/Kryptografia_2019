@@ -55,15 +55,38 @@ def zad_2():
     mod = pow(2, 32) - 1
 
     a = Modular.pow_modulo(base, power, mod)
-    a2 = pow(base, power, mod)
 
-    t1 = pow(2, 16) - 1
+    t1 = int(pow(2, 16) - 1)
     result1 = a % t1
+    print(" a mod( 2^16 -1)")
+    print(result1)
 
-    # result2 = Modular.tau(a)
+    result2 = Modular.tau(a)
+    print(" tau(a)")
+    print(result2)
+
     result3 = Modular.jota(a)
-    result4 = Modular.nwd(a, t1)
-    result5 = Modular.nww(a, t1)
+    print(" jota(a)")
+    print(result3)
+
+    result4 = Modular.nwd([a, t1])
+    print(" nwd(a, 2^16 -1)")
+    print(result4)
+
+    result5 = Modular.nww([a, t1])
+    print(" nww(a, 2^16 -1)")
+    print(result5)
+
+    # result6 = Modular.pi(a)
+    # print(" pi(a)")
+    # print(result6)
+
+
+    result7 = Modular.phi(a)
+    print(" euler(a)")
+    print(result7)
+
+
 
 
 # zad_1()
