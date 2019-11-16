@@ -2,7 +2,8 @@ import math
 from functools import reduce
 import numpy as np
 
-def mul_modulo(a,b, mod):
+
+def mul_modulo(a, b, mod):
     return ((a % mod) * (b % mod)) % mod
 
 
@@ -12,17 +13,17 @@ def pow_modulo(a, n, mod):
         if not n % 2 == 0:
             c = mul_modulo(c, a, mod)
         a = mul_modulo(a, a, mod)
-        n = math.floor(n/2)
+        n = math.floor(n / 2)
     return c
 
 
 def divisors(a):
     d = {1, a}
-    for b in range(2, math.floor(math.sqrt(a))+1):
+    for b in range(2, math.floor(math.sqrt(a)) + 1):
         "range do not include end value, +1 is necessary"
         if a % b == 0:
             d.add(b)
-            d.add(int(a/b))
+            d.add(int(a / b))
     return d
 
 
@@ -47,3 +48,14 @@ def nww(list):
     return x
 
 
+def phi(a):
+    "Symbolem φ(a) oznaczamy liczbę tych liczb naturalnych, " \
+    "które są mniejsze lub równe od liczby naturalnej a " \
+    "i są z nią względnie pierwsze." \
+    "φ nazywane jest funkcją Eulera. "
+    count = 0
+    for i in range(1, a + 1):
+        "range do not include end value, +1 is necessary"
+        if np.gcd(i, a) == 1:
+            count += 1
+    return count

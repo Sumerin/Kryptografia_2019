@@ -128,6 +128,18 @@ class ModularArithmeticMethods(unittest.TestCase):
         expected = 48
         self.assertEqual(expected, result)
 
+    def test_phi_prime(self):
+        arg = 199
+        result = MA.phi(arg)
+        expected = 198
+        self.assertEqual(expected, result)
+
+    def test_simple_phi(self):
+        arg = 20
+        result = MA.phi(arg)
+        expected = 8
+        self.assertEqual(expected, result)
+
 
 if __name__ == '__main__':
     unittest.main()
