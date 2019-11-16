@@ -1,5 +1,6 @@
 import queue, locale
 
+
 def railFence_encipher(message, h):
     layers = {}
     for i in range(h):
