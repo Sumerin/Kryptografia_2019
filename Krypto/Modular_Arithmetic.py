@@ -8,13 +8,7 @@ def mul_modulo(a, b, mod):
 
 
 def pow_modulo(a, n, mod):
-    c = 1
-    while n > 0:
-        if not n % 2 == 0:
-            c = mul_modulo(c, a, mod)
-        a = mul_modulo(a, a, mod)
-        n = math.floor(n / 2)
-    return c
+    return pow(a, n, mod)
 
 
 def divisors(a):
@@ -53,6 +47,7 @@ def phi(a):
     "które są mniejsze lub równe od liczby naturalnej a " \
     "i są z nią względnie pierwsze." \
     "φ nazywane jest funkcją Eulera. "
+    "WIĘCEJ WŁAŚCIWOŚCI PATRZ SLAJDY 22, 26"
     count = 0
     for i in range(1, a + 1):
         "range do not include end value, +1 is necessary"
