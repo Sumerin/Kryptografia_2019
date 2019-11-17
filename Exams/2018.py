@@ -63,9 +63,10 @@ def zad_2():
     print(" nww(a, 2^16 -1)")
     print(result5)
 
-    result6 = Modular.pi(a)
+    result61, result62 = Modular.pi_from_probability(a)
     print(" pi(a)")
-    print(result6)
+    print(result61)
+    print(result62)
 
     result7 = Modular.phi_by_kanon(a)
     print(" euler(a)")
@@ -133,6 +134,6 @@ def zad_4():
     #         print(result)
 
 # zad_1()
-# zad_2()
+zad_2()
 # zad_3()
-zad_4()
+# zad_4()

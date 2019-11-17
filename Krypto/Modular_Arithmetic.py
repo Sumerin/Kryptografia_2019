@@ -144,15 +144,33 @@ def kanon2(a):
 
 
 def pi(a):
-    count = 1
     if a == 1:
-        return 0
-    if a == 2:
         return 1
-    for i in range(3, a+1, 2):
-        if is_prime(i):
-            count += 1
-    return count
+    if a == 2:
+        return 2
+    primes = [2]
+    for i in range(3, a + 1, 2):
+        is_i_prime = True
+        for prime in primes:
+            if i % prime == 0:
+                is_i_prime = False
+                break
+        if is_i_prime:
+            primes.append(i)
+    return len(primes) + 1
+
+
+def pi_from_probability(n):
+    if n <= 59:
+        res = pi(n)
+        return res, res
+
+    lnn = math.log(n)
+    t1 = n / lnn
+
+    leftside = t1 + (t1 / (2*lnn))
+    rightside = t1 + (t1 / ((2/3) * lnn))
+    return leftside, rightside
 
 
 def fermat(n):
