@@ -3,20 +3,6 @@ import Krypto.Permutation as Pi
 import Krypto.Modular_Arithmetic as Modular
 
 
-def zad_6():
-    encrypted_full ="Róaniezoslbołżncynk irsepnżz izy z zipw iec"
-    encrypted ="aa"
-    key = ""
-
-    for char in Cipher.letters:
-        newKey = key + char
-        m = len(newKey)
-        result = Cipher.vigenere_decipher(encrypted, newKey, m)
-        print(newKey)
-        print(result)
-        print()
-
-
 def zad_1():
     p1 = {
         1:2,
@@ -77,18 +63,18 @@ def zad_2():
     print(" nww(a, 2^16 -1)")
     print(result5)
 
-    # result6 = Modular.pi(a)
-    # print(" pi(a)")
-    # print(result6)
+    result6 = Modular.pi(a)
+    print(" pi(a)")
+    print(result6)
 
     result7 = Modular.phi_by_kanon(a)
     print(" euler(a)")
     print(result7)
 
-    # result8 = Modular.phi_by_kanon(a)
+    result8 = Modular.is_prime(a)
     t2 = Modular.kanon(a)
     print(" zad2.1")
-    # print(result8)
+    print(result8)
     print(min(t2))
 
     result9 = Modular.nfermat(a)
@@ -97,9 +83,56 @@ def zad_2():
     print(t2)
 
 
+def zad_3():
+    encrypted = "ZAŁNKAIPKAEAOWDNRYDWKLIMAZOOU"
 
+    for i in range(2, len(encrypted)):# 4
+        result = Cipher.railFence_decipher(encrypted, i)
+        # print(i)
+        # print(result)
+
+    result2 = Cipher.railFence_decipher(encrypted, 4)
+    print("pkt 2")
+    print(result2)
+
+    result3 = Cipher.railFence_encipher(result2, 2)
+    print("pkt 3")
+    print(result3)
+
+    result4 = Cipher.cesar(result2)
+    print("pkt 4")
+    print(result4)
+
+
+
+def zad_4():
+    encrypted_full ="Róaniezoslbołżncynk irsepnżz izy z zipw iec"
+    encrypted ="zipw iec"
+    key = "EIFŃŻEŚ"#"GJĘEŹARTZDWA" #"AEPNQXY"
+
+    # result = Cipher.vigenere_decipher(encrypted_full, key, len(key))
+    # print(key)
+    # print(result)
+    # for i in range(2, len(encrypted_full)):
+    #     result = Cipher.railFence_decipher(encrypted_full, i)
+    #     print(i)
+    #     print(result)
+
+    # for i in range(2, 20):
+    #     result = Cipher.matrix_cipher(encrypted_full, i)
+    #     print(i)
+    #     print(result)
+    #     print()
+    # for c5 in Cipher.letters:
+    #     t5 = key + c5
+    #     for char in Cipher.letters:
+    #         newKey = t5 + char
+    #         m = len(newKey)
+    #         result = Cipher.vigenere_decipher(encrypted, newKey, m)
+    #         print(newKey)
+    #         print(result)
 
 # zad_1()
-zad_2()
-
-# zad_6()
+# zad_2()
+# zad_3()
+zad_4()

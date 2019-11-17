@@ -167,24 +167,28 @@ class Modular_ArithmeticMethods(unittest.TestCase):
         a = 10
         self.assertEquals(expected, Modular.phi(a))
         self.assertEquals(expected, Modular.phi_by_kanon(a))
+        self.assertEquals(expected, Modular.phi_by_kanon2(a))
 
     def test_euler2(self):
         expected = 6
         a = 9
         self.assertEquals(expected, Modular.phi(a))
         self.assertEquals(expected, Modular.phi_by_kanon(a))
+        self.assertEquals(expected, Modular.phi_by_kanon2(a))
 
     def test_euler3(self):
         expected = math.pow(2, 16)
         a = int(math.pow(2, 16) + 1)
         self.assertEquals(expected, Modular.phi(a))
         self.assertEquals(expected, Modular.phi_by_kanon(a))
+        self.assertEquals(expected, Modular.phi_by_kanon2(a))
 
     def test_euler4(self):
         expected = 1
         a = 1
         self.assertEquals(expected, Modular.phi(a))
         self.assertEquals(expected, Modular.phi_by_kanon(a))
+        self.assertEquals(expected, Modular.phi_by_kanon2(a))
 
     def test_phi_prime(self):
         arg = 199

@@ -91,6 +91,28 @@ def phi_by_kanon(a):
     return euler
 
 
+def phi_by_kanon2(a):
+    kanon_form = kanon2(a)
+
+    euler = 1
+    for pk in kanon_form:
+        ak = kanon_form[pk]
+        tmp = pow(pk, ak) - pow(pk, ak - 1)
+        euler *= tmp
+    return euler
+
+
+def phi_by_kanon_pow(a, b):
+    kanon_form = kanon(a)
+
+    euler = 1
+    for pk in kanon_form:
+        ak = kanon_form[pk] * b
+        tmp = pow(pk, ak) - pow(pk, ak - 1)
+        euler *= tmp
+    return euler
+
+
 def kanon(a):
     kanon_form = {}
     for i in range(2, a+1):
@@ -103,6 +125,21 @@ def kanon(a):
                 a = value
                 kanon_form[i] += 1
                 value = a / i
+    return kanon_form
+
+
+def kanon2(a):
+    kanon_form = {}
+    for i in range(2, a+1):
+        if a == 1:
+            break
+        value = a % i
+        if value == 0:
+            kanon_form[i] = 0
+            while value == 0:
+                a = a / i
+                kanon_form[i] += 1
+                value = a % i
     return kanon_form
 
 
