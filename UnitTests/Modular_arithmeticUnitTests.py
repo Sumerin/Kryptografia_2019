@@ -417,3 +417,12 @@ class Modular_ArithmeticMethods(unittest.TestCase):
         mod = 1024
         result = Modular.ModuloEquatation(a, b, mod, ran)
         self.assertEquals(expected, result)
+
+    def test_euklidesEquatation(self):
+        a = math.pow(2, 16) - 1
+        b = math.pow(2, 16) + 1
+        nwd, x, y = Modular.euklidesEquatation(a, b)
+
+        self.assertEquals(1, nwd)
+        self.assertEquals(math.pow(2, 15), x)
+        self.assertEquals(-math.pow(2, 15) + 1, y)

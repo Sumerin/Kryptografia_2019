@@ -130,14 +130,22 @@ def zad_4():
     b = pow(2, 16) + 1
 
     result1 = Modular.nwd([a, b])
-    print("nwd")
-    print(result1)
+    print("nwd", result1)
 
     result2 = pow(a, 32) * pow(b, 32)  # nwd is 1
-    print("nww")
-    print(result2)
+    print("nww", result2)
 
-    print(Modular.phi_by_kanon_pow(a, b))
+    print("phi", Modular.phi_by_kanon_pow(a, b))
+
+    nwd, x, y = Modular.euklidesEquatation(a, b)
+    kanonx = Modular.kanon(x)
+    kanony = Modular.kanon(y)
+
+    print("x:", x)
+    print("kanon x:", kanonx)
+
+    print("y:", y)
+    print("kanon y:", kanony)
 
 
 def zad_5():
@@ -175,5 +183,5 @@ def zad_5():
 # zad_1()
 # zad_2()
 # zad_3()
-# zad_4()
-zad_5()
+zad_4()
+# zad_5()

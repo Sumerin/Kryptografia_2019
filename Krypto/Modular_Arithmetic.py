@@ -219,3 +219,21 @@ def ModuloEquatation(a, b, mod, ran):
             result.append(i)
 
     return result
+
+
+def euklidesEquatation(a, b):
+    x, x_prim, y, y_prim = 1, 0, 0, 1
+    while b != 0:
+        q = math.floor(a/b)
+        r = b
+        b = a % b
+        a = r
+
+        t = x_prim
+        x_prim = x - (q*x_prim)
+        x = t
+
+        t = y_prim
+        y_prim = y - (q*y_prim)
+        y = t
+    return a, x, y
