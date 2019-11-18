@@ -145,9 +145,9 @@ def kanon2(a):
 
 def pi(a):
     if a == 1:
-        return 1
+        return 0
     if a == 2:
-        return 2
+        return 1
     primes = [2]
     for i in range(3, a + 1, 2):
         is_i_prime = True
@@ -157,7 +157,7 @@ def pi(a):
                 break
         if is_i_prime:
             primes.append(i)
-    return len(primes) + 1
+    return len(primes)
 
 
 def pi_from_probability(n):
@@ -192,4 +192,30 @@ def nfermat(a):
         return None
 
 
+def nPrime(n):
+    primes = [2]
+    count = 1
+    i = 3
+    while count < n:
+        is_i_prime = True
+        for prime in primes:
+            if i % prime == 0:
+                is_i_prime = False
+                break
+        if is_i_prime:
+            primes.append(i)
+            count += 1
+        i += 1
+    return primes
 
+
+def ModuloEquatation(a, b, mod, ran):
+    result = []
+    expected = b % mod
+
+    for i in ran:
+        value = mul_modulo(a, i, mod)
+        if value == expected:
+            result.append(i)
+
+    return result

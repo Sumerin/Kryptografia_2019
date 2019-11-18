@@ -350,27 +350,27 @@ class Modular_ArithmeticMethods(unittest.TestCase):
         self.assertEqual(expected, result)
 
     def test_pi1(self):
-        expected = 1
+        expected = 0
         a = 1
         self.assertEquals(expected, Modular.pi(a))
 
     def test_pi2(self):
-        expected = 2
+        expected = 1
         a = 2
         self.assertEquals(expected, Modular.pi(a))
 
     def test_pi3(self):
-        expected = 3
+        expected = 2
         a = 3
         self.assertEquals(expected, Modular.pi(a))
 
     def test_pi4(self):
-        expected = 9
+        expected = 8
         a = 20
         self.assertEquals(expected, Modular.pi(a))
 
     def test_pi5(self):
-        expected = 9
+        expected = 8
         a = 19
         self.assertEquals(expected, Modular.pi(a))
 
@@ -403,3 +403,17 @@ class Modular_ArithmeticMethods(unittest.TestCase):
         expected = None
         a = 4
         self.assertEquals(expected, Modular.nfermat(a))
+
+    def test_nPrimeNumbers(self):
+        expected = [2, 3, 5, 7, 11]
+        n = 5
+        self.assertEquals(expected, Modular.nPrime(n))
+
+    def test_ModuloEquatation(self):
+        expected = [1, 129, 257, 385, 513, 641, 769, 897]
+        ran = range(0, 1025)
+        a = 8
+        b = 8
+        mod = 1024
+        result = Modular.ModuloEquatation(a, b, mod, ran)
+        self.assertEquals(expected, result)

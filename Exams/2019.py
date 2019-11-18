@@ -1,6 +1,7 @@
 import Krypto.Cipher as Cipher
 import Krypto.Permutation as Pi
 import Krypto.Modular_Arithmetic as Modular
+import numpy as np
 
 
 def zad_1():
@@ -93,7 +94,35 @@ def zad_2():
 
 
 def zad_3():
-    return None
+    n = 5
+    solutions = []
+    primes = Modular.nPrime(n)
+    ran = range(1, 2048)
+    for i in range(1, n + 1):
+        solutions.append(Modular.ModuloEquatation(1, i, primes[i - 1], ran))
+
+    base = set(solutions[0])
+    for i in range(1, n):
+        B = set(solutions[i])
+        base = base.intersection(B)
+
+    x = min(base)
+
+    print(x)
+    is_prime = Modular.is_prime(x)
+    print("is prime:", is_prime)
+
+    result1 = Modular.tau(x)
+    print(result1)
+
+    result2 = Modular.phi(x)
+    print(result2)
+
+    result3 = Modular.jota(x)
+    print(result3)
+
+    result4 = Modular.kanon(x)
+    print(result4)
 
 
 def zad_4():
@@ -108,14 +137,43 @@ def zad_4():
     print("nww")
     print(result2)
 
-    # print(Modular.phi_by_kanon_pow(a, b))
+    print(Modular.phi_by_kanon_pow(a, b))
+
 
 def zad_5():
-   return None
+    ran = range(0, 1024)
+    result0 = Modular.ModuloEquatation(8, 8, 1024, ran)
+
+    print("NWD")
+    print(Modular.nwd(result0))
+
+    print('Sum of x')
+    print(np.sum(result0))
+
+    max_value = 0
+    max_power = 0
+    for i in range(len(result0)):
+        value = result0[i]
+        power = Modular.phi(value)
+        if max_power < power:
+            max_power = power
+            max_value = value
+        elif power < max_power:
+            a = pow(max_value, max_power)
+            b = pow(value, power)
+            if a < b:
+                max_power = power
+                max_value = value
+
+    print("max")
+    print(pow(max_value, max_power))
+
+    print('k')
+    print(len(result0))
 
 
-zad_1()
+# zad_1()
 # zad_2()
 # zad_3()
 # zad_4()
-# zad_5()
+zad_5()
